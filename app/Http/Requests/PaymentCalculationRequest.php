@@ -2,9 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Enums\PaymentFrecuency;
-use Illuminate\Validation\Rule;
-use Illuminate\Validation\Rules\Enum;
+use App\Rules\ValidPaymentFrecuency;
 
 class PaymentCalculationRequest extends ApiFormRequest
 {
@@ -25,7 +23,7 @@ class PaymentCalculationRequest extends ApiFormRequest
   {
     return [
       'paymentDate' => ['required', 'date'],
-      'paymentFrequency' => ['required', 'string', new Enum(PaymentFrecuency::class)],
+      'paymentFrequency' => ['required', 'string', new ValidPaymentFrecuency()],
     ];
   }
 
@@ -36,7 +34,6 @@ class PaymentCalculationRequest extends ApiFormRequest
       'paymentDate.date' => 'La fecha de pago debe ser una fecha válida.',
       'paymentFrequency.required' => 'La frecuencia es obligatoria.',
       'paymentFrequency.string' => 'La frecuencia debe ser una cadena de texto.',
-      'paymentFrequency.Illuminate\Validation\Rules\Enum' => 'La frecuencia de pago debe ser uno de los siguientes valores: daily, weekly, biweekly, monthly, annually.',
     ];
   }
 }
