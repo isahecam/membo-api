@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MembershipController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -8,3 +9,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::apiResource('memberships', MembershipController::class);
+
+/*
+* API routes for service payment
+*/
+
+Route::prefix('payment')->group(function () {
+  Route::post('/next-date', [PaymentController::class, 'nextPaymentDate']);
+});
