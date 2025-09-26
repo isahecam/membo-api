@@ -1,6 +1,6 @@
 # Membo API - A personal membership and subscription management
 
-This is a **RESTful API** built with **Laravel 12** and **MySQL** that acts as the backend for the "Membo" web application. Its purpose is to serve as a robust data layer for users to personally manage their service subscriptions. The API provides an **all-in-one** solution to register, view, and organize memberships efficiently.
+A **RESTful API** built with **Laravel 12** and **MySQL** that acts as the backend for the "Membo" web application. Its purpose is to serve as a robust data layer for users to personally manage their service subscriptions. The API provides an **all-in-one** solution to register, view, and organize memberships efficiently.
 
 ---
 
